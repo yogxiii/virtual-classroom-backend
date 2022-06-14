@@ -1,6 +1,7 @@
 ### Setup
- cd CLASSROOM
- npm install
+```sh
+ cd CLASSROOM,
+ npm install,
  npm start
  ```
  
