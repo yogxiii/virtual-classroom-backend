@@ -1,0 +1,52 @@
+{
+    "routes": [
+      {
+        "route": "POST /auth/signup",
+        "description": "create new user",
+        "parameters": ["body.username", "body.password","body.user_type"],
+        "headers": []
+      },
+      {
+        "route": "POST /auth/signin",
+        "description": "login new user",
+        "parameters": ["body.username", "body.password"],
+        "headers": []
+      },
+      {
+        "route": "POST /assignment/create",
+        "description": "create new assignment",
+        "parameters": ["body.description", "body.published_at","body.deadline_at","body.studentlist"],
+        "headers": ["token"]
+      },
+      {
+        "route": "PUT /assignment/update",
+        "description": "update assignment",
+        "parameters": ["body.id","body.description", "body.published_at","body.deadline_at","body.studentlist"],
+        "headers": ["token"]
+      },
+      {
+        "route": "DELETE /assignment/delete",
+        "description": "delete assigment",
+        "parameters": ["body.assignmentId"],
+        "headers": ["token"]
+      },
+      {
+        "route": "GET /assignment/get",
+        "description": "get assignment for both user_type if submitted",
+        "parameters": [],
+        "headers": ["token"]
+      },
+      {
+        "route": "GET /assignment/get/query",
+        "description": "get assignmentfeed for both user_type based on query parameter",
+        "parameters": ["qurey.publishedAt", "query.status"],
+        "headers": ["token"]
+      },
+      {
+        "route": "POST /submission",
+        "description": "submit assignment for student",
+        "parameters": ["body.assignmentid", "body.remark"],
+        "headers": ["token"]
+      }    
+    ]
+  }
